@@ -2,7 +2,6 @@
 // Adding task
 
 const AddBtn = document.querySelector("#Add-Btn");
-AddBtn.e
 AddBtn.addEventListener('click', function () {
     var AddForm = document.forms['Add-Task'];
     var TaskTitle = AddForm.querySelector('input[type="text"]').value;
@@ -13,9 +12,11 @@ AddBtn.addEventListener('click', function () {
     Task.querySelector("#Add-Task #floatingTextarea").textContent = TaskDescp;
     const TaskL = document.querySelector("#Tasks-list");
     TaskL.append(Task);
-    AddForm.querySelector('input[type="text"]').value = "";
-    document.getElementById("floatingTextarea").value = "";
+    Task.querySelector(".btn").setAttribute('id', 'Delete-Btn');
+    Task.querySelector(".btn").textContent = "Delete Task";
+    Task.querySelector(".btn").setAttribute('class', 'btn btn-danger');
+    document.querySelector("#Tasks-list .card-body").className += " bg-primary p-2 text-dark bg-opacity-25";
+    AddForm.querySelector('input[type="text"]').value = null;
+    document.getElementById("floatingTextarea").value = null;
 })
-
-
 
